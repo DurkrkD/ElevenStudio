@@ -1,0 +1,70 @@
+{
+  "pacotes": [
+    {
+      "nome": "Essencial",
+      "para_quem": "Para começar a aparecer com constância.",
+      "preco": "497",
+      "itens": [
+        "8 posts (feed ou stories)",
+        "1 rede social",
+        "Calendário básico de conteúdo"
+      ],
+      "destaque": false,
+      "selo": ""
+    },
+    {
+      "nome": "Profissional",
+      "para_quem": "Para quem quer crescer e vender pelas redes.",
+      "preco": "897",
+      "itens": [
+        "12 posts + 4 Reels",
+        "2 redes sociais",
+        "1 cardápio digital incluso",
+        "Calendário + relatório mensal"
+      ],
+      "destaque": true,
+      "selo": "Recomendado"
+    },
+    {
+      "nome": "Completo",
+      "para_quem": "Para ter as redes inteiras resolvidas.",
+      "preco": "1.497",
+      "itens": [
+        "20 posts + 8 Reels",
+        "2 redes sociais + WhatsApp Business",
+        "Logo inclusa",
+        "1 cardápio digital + atualização mensal",
+        "Calendário + relatório + reunião mensal"
+      ],
+      "destaque": false,
+      "selo": ""
+    }
+  ],
+  "avulsos": [
+    {
+      "icone": "logo",
+      "nome": "Logo simples",
+      "descricao": "Símbolo e tipografia, com arquivos para impressão e redes.",
+      "preco": "297"
+    },
+    {
+      "icone": "menu",
+      "nome": "Cardápio digital",
+      "descricao": "Com link e QR Code, pronto para mesa e delivery.",
+      "preco": "197"
+    },
+    {
+      "icone": "reel",
+      "nome": "Pack de 4 Reels",
+      "descricao": "Edição com cortes, legendas na tela e transições.",
+      "preco": "497"
+    },
+    {
+      "icone": "post",
+      "nome": "Pack de 10 posts",
+      "descricao": "Feed ou stories com a identidade da sua marca.",
+      "preco": "297"
+    }
+  ],
+  "observacao": "Valores podem variar conforme o projeto. Entre em contato para um orçamento personalizado."
+}

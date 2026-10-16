@@ -12,10 +12,17 @@ services:
       - path: /
         name: Cache-Control
         value: no-cache
-      - path: /index.html
+      - path: /*.html
         name: Cache-Control
         value: no-cache
-      # CSS e JS: 1 dia. Ao alterar, aumente o ?v= no index.html.
+      # Conteúdo editado pelo painel e o próprio painel: sempre a versão mais nova.
+      - path: /content/*
+        name: Cache-Control
+        value: no-cache
+      - path: /admin/*
+        name: Cache-Control
+        value: no-cache
+      # CSS e JS: 1 dia. Ao alterar, aumente o ?v= em todas as páginas.
       - path: /*.css
         name: Cache-Control
         value: public, max-age=86400
@@ -36,7 +43,7 @@ services:
       - path: /assets/*.svg
         name: Cache-Control
         value: public, max-age=604800
-      - path: /assets/portfolio/*
+      - path: /assets/uploads/*
         name: Cache-Control
         value: public, max-age=604800
       # Segurança básica

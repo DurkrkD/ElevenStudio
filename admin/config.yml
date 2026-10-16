@@ -1,0 +1,194 @@
+# Painel de edição da Eleven Studio (Sveltia CMS)
+# Cada "Salvar" no painel vira um commit no GitHub, e o Render atualiza o site sozinho.
+
+backend:
+  name: github
+  repo: DurkrkD/ElevenStudio
+  branch: main
+
+site_url: https://eleven-studio-bes1.onrender.com
+display_url: https://eleven-studio-bes1.onrender.com
+
+# Onde as imagens enviadas pelo painel ficam guardadas
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+# Fotos do celular são convertidas para WebP e reduzidas antes de subir (site mais rápido)
+media_libraries:
+  default:
+    config:
+      max_file_size: 15000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1600
+          height: 1600
+
+collections:
+  - name: site
+    label: Conteúdo do site
+    editor:
+      preview: false
+    files:
+
+      # ------------------------------------------------------------ DEPOIMENTOS
+      - name: depoimentos
+        label: Depoimentos
+        file: content/depoimentos.json
+        format: json
+        fields:
+          - name: depoimentos
+            label: Depoimentos
+            label_singular: depoimento
+            hint: A seção de depoimentos só aparece na página inicial quando houver pelo menos 1 depoimento.
+            widget: list
+            required: false
+            summary: "{{nome}} · {{empresa}}"
+            fields:
+              - { name: texto, label: Depoimento, widget: text, hint: "O que o cliente disse. Ideal: 2 a 4 linhas, com um resultado concreto." }
+              - { name: nome, label: Nome do cliente, widget: string }
+              - { name: empresa, label: Empresa e cidade, widget: string, required: false, hint: "Ex.: Padaria Pão Quente · Betim/MG" }
+              - { name: foto, label: Foto do cliente, widget: image, required: false, hint: "Opcional. Foto quadrada fica melhor." }
+
+      # ------------------------------------------------------------ PORTFÓLIO
+      - name: portfolio
+        label: Portfólio
+        file: content/portfolio.json
+        format: json
+        fields:
+          - name: trabalhos
+            label: Trabalhos
+            label_singular: trabalho
+            hint: O link "Portfólio" do menu só aparece quando houver pelo menos 1 trabalho. O primeiro da lista aparece primeiro no site.
+            widget: list
+            required: false
+            summary: "{{titulo}} · {{categoria}}"
+            fields:
+              - { name: titulo, label: Nome do projeto, widget: string, hint: "Ex.: Identidade visual da Padaria Pão Quente" }
+              - name: categoria
+                label: Categoria
+                widget: select
+                options:
+                  - { label: Logo, value: logo }
+                  - { label: Post, value: post }
+                  - { label: Vídeo, value: video }
+                  - { label: Cardápio, value: cardapio }
+              - { name: imagem, label: Imagem, widget: image, hint: "Formato vertical (4:5) fica melhor, ex.: 1080 × 1350 px." }
+              - { name: descricao, label: Descrição curta, widget: string, required: false, hint: "Opcional. Aparece embaixo do nome." }
+
+      # ------------------------------------------------------------ PREÇOS
+      - name: precos
+        label: Pacotes e preços
+        file: content/precos.json
+        format: json
+        fields:
+          - name: pacotes
+            label: Pacotes mensais
+            label_singular: pacote
+            widget: list
+            summary: "{{nome}} · R$ {{preco}}"
+            fields:
+              - { name: nome, label: Nome do pacote, widget: string }
+              - { name: para_quem, label: Para quem é, widget: string }
+              - { name: preco, label: "Preço por mês (só o número)", widget: string, hint: "Ex.: 497 ou 1.497. O site mostra \"a partir de R$ ... /mês\"." }
+              - name: itens
+                label: O que está incluso
+                widget: list
+                field: { name: item, label: Item, widget: string }
+              - { name: destaque, label: Destacar este pacote (fundo escuro), widget: boolean, default: false, required: false }
+              - { name: selo, label: Texto do selo no destaque, widget: string, required: false, hint: "Ex.: Recomendado. Só aparece se o pacote estiver destacado." }
+          - name: avulsos
+            label: Serviços avulsos
+            label_singular: serviço avulso
+            widget: list
+            summary: "{{nome}} · R$ {{preco}}"
+            fields:
+              - &icone
+                name: icone
+                label: Ícone
+                widget: select
+                default: post
+                options:
+                  - { label: Logo, value: logo }
+                  - { label: Post, value: post }
+                  - { label: Vídeo / Reels, value: reel }
+                  - { label: Cardápio, value: menu }
+                  - { label: Calendário, value: cal }
+                  - { label: Conversa, value: chat }
+                  - { label: Raio (agilidade), value: bolt }
+                  - { label: Diamante (qualidade), value: gem }
+                  - { label: Globo, value: globe }
+              - { name: nome, label: Nome, widget: string }
+              - { name: descricao, label: Descrição curta, widget: string }
+              - { name: preco, label: "Preço (só o número)", widget: string, hint: "Ex.: 297" }
+          - { name: observacao, label: Observação embaixo dos preços, widget: text, required: false }
+
+      # ------------------------------------------------------------ SERVIÇOS
+      - name: servicos
+        label: Serviços
+        file: content/servicos.json
+        format: json
+        fields:
+          - name: servicos
+            label: Serviços
+            label_singular: serviço
+            hint: Aparecem na página Serviços e em resumo na página inicial, nesta ordem.
+            widget: list
+            summary: "{{titulo}}"
+            fields:
+              - { name: id, label: "Código do link (sem espaços)", widget: string, pattern: ['^[a-z0-9-]+$', 'Use só letras minúsculas, números e hífen'], hint: "Ex.: reels. Vira o endereço servicos.html#reels." }
+              - *icone
+              - { name: titulo, label: Nome do serviço, widget: string }
+              - { name: resumo, label: Resumo (página inicial), widget: text, hint: "Uma frase." }
+              - { name: descricao, label: Descrição (página Serviços), widget: text, hint: "2 a 3 linhas." }
+              - name: inclusos
+                label: O que está incluso
+                widget: list
+                field: { name: item, label: Item, widget: string }
+              - { name: ideal_para, label: Ideal para, widget: string, hint: "Complete a frase \"Ideal para: ...\"" }
+
+      # ------------------------------------------------------------ INÍCIO
+      - name: inicio
+        label: Página inicial (abertura)
+        file: content/inicio.json
+        format: json
+        fields:
+          - { name: titulo, label: "Título (primeira linha, branca)", widget: string }
+          - { name: titulo_destaque, label: "Título (segunda linha, em degradê)", widget: string }
+          - { name: subtitulo, label: Subtítulo, widget: text }
+
+      # ------------------------------------------------------------ SOBRE
+      - name: sobre
+        label: Página Sobre
+        file: content/sobre.json
+        format: json
+        fields:
+          - { name: foto, label: Sua foto, widget: image, required: false, hint: "Vertical, de preferência. Sem foto, aparece o símbolo da Eleven Studio." }
+          - { name: titulo, label: Título, widget: string }
+          - name: paragrafos
+            label: Texto
+            label_singular: parágrafo
+            widget: list
+            field: { name: paragrafo, label: Parágrafo, widget: text }
+          - { name: assinatura, label: Assinatura, widget: string, required: false }
+          - name: valores
+            label: Valores
+            label_singular: valor
+            widget: list
+            summary: "{{titulo}}"
+            fields:
+              - *icone
+              - { name: titulo, label: Título, widget: string }
+              - { name: texto, label: Texto, widget: text }
+
+      # ------------------------------------------------------------ CONTATO
+      - name: geral
+        label: Contato (WhatsApp e Instagram)
+        file: content/geral.json
+        format: json
+        fields:
+          - { name: whatsapp_numero, label: "WhatsApp (só números, com 55 e DDD)", widget: string, pattern: ['^[0-9]{12,13}$', 'Use só números, ex.: 5531973613994'], hint: "Usado em todos os botões do site." }
+          - { name: whatsapp_exibicao, label: WhatsApp como aparece no site, widget: string, hint: "Ex.: (31) 97361-3994" }
+          - { name: whatsapp_mensagem, label: Mensagem que já vem escrita, widget: text }
+          - { name: instagram_usuario, label: "Instagram (sem o @)", widget: string, pattern: ['^[A-Za-z0-9._]+$', 'Sem @ e sem espaços'] }

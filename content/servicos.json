@@ -1,0 +1,74 @@
+{
+  "servicos": [
+    {
+      "id": "logo",
+      "icone": "logo",
+      "titulo": "Criação de logo",
+      "resumo": "Símbolo e tipografia que funcionam na fachada, na embalagem e no ícone do perfil.",
+      "descricao": "Um logo simples e marcante, com símbolo e tipografia, que funciona do tamanho de um ícone de perfil até a fachada da loja.",
+      "inclusos": [
+        "Símbolo e tipografia sob medida",
+        "Versões colorida, preta e branca",
+        "Paleta de cores e fontes da marca",
+        "Arquivos em PNG, PDF e SVG"
+      ],
+      "ideal_para": "negócios abrindo agora ou marcas que precisam de uma cara nova."
+    },
+    {
+      "id": "posts",
+      "icone": "post",
+      "titulo": "Posts para Instagram",
+      "resumo": "Feed e stories com a mesma identidade, prontos para publicar e fáceis de reconhecer.",
+      "descricao": "Artes para feed e stories com identidade visual consistente: promoções, lançamentos, avisos e datas comemorativas. Seu perfil passa a ser reconhecido de longe.",
+      "inclusos": [
+        "Feed (1080 × 1350) e stories (1080 × 1920)",
+        "Textos e legendas prontos para publicar",
+        "Modelos com a identidade da sua marca",
+        "Ajustes antes de qualquer publicação"
+      ],
+      "ideal_para": "quem quer um perfil bonito, organizado e sempre atualizado."
+    },
+    {
+      "id": "reels",
+      "icone": "reel",
+      "titulo": "Vídeos curtos e Reels",
+      "resumo": "Cortes no ritmo certo, legendas na tela e transições limpas, para quem assiste sem som.",
+      "descricao": "Edição com cortes no ritmo certo, legendas na tela e transições limpas. Você grava pelo celular e nós transformamos o material em vídeo que segura a atenção.",
+      "inclusos": [
+        "Cortes dinâmicos e trilha sonora",
+        "Legendas na tela, legíveis sem som",
+        "Transições e capa para o perfil",
+        "Formato vertical para Reels, TikTok e Shorts"
+      ],
+      "ideal_para": "mostrar produto, bastidores, equipe e clientes satisfeitos."
+    },
+    {
+      "id": "cardapio",
+      "icone": "menu",
+      "titulo": "Cardápio digital",
+      "resumo": "Bonito e fácil de ler no celular, com link e QR Code para a mesa, o balcão e o delivery.",
+      "descricao": "Cardápio fácil de ler no celular, organizado por categorias, para restaurantes, lanchonetes e bares. Mudou um preço ou entrou um prato novo? A atualização é rápida.",
+      "inclusos": [
+        "Layout pensado para a tela do celular",
+        "Link para compartilhar e QR Code",
+        "Versão para impressão",
+        "Link direto para pedir pelo WhatsApp"
+      ],
+      "ideal_para": "restaurantes, lanchonetes, bares, docerias e delivery."
+    },
+    {
+      "id": "gestao",
+      "icone": "cal",
+      "titulo": "Gestão de redes sociais",
+      "resumo": "Planejamento, criação e publicação. Você aprova o mês e segue cuidando do negócio.",
+      "descricao": "Planejamento do mês, criação dos conteúdos e publicação nas datas certas. Você aprova o calendário uma vez e segue cuidando do seu negócio.",
+      "inclusos": [
+        "Calendário mensal de conteúdo",
+        "Criação de posts e Reels",
+        "Legendas e publicação",
+        "Relatório com os resultados do mês"
+      ],
+      "ideal_para": "quem quer constância nas redes sem gastar o próprio tempo."
+    }
+  ]
+}

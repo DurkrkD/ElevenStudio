@@ -1,0 +1,26 @@
+{
+  "foto": "",
+  "titulo": "Design com cuidado de quem também empreende.",
+  "paragrafos": [
+    "A Eleven Studio é o estúdio de social media e design do Eduardo, criado para ajudar pequenas e médias empresas a se apresentarem com o mesmo cuidado que têm com o próprio produto.",
+    "Aqui você fala com quem cria, sem intermediários. Cada projeto começa entendendo quem é o seu cliente e o que faz ele comprar. Só depois vem o design."
+  ],
+  "assinatura": "Eduardo, fundador da Eleven Studio",
+  "valores": [
+    {
+      "icone": "bolt",
+      "titulo": "Agilidade",
+      "texto": "Prazos combinados por escrito antes de começar. Você sabe exatamente quando cada peça chega."
+    },
+    {
+      "icone": "gem",
+      "titulo": "Qualidade",
+      "texto": "Cada arte é revisada antes de chegar até você: alinhamento, ortografia, cores e o formato certo para cada rede."
+    },
+    {
+      "icone": "chat",
+      "titulo": "Atendimento próximo",
+      "texto": "Você fala direto com quem cria, pelo WhatsApp, sem robô e sem fila de atendimento."
+    }
+  ]
+}
