@@ -1,0 +1,51 @@
+# Configuração do Render (Blueprint) para o site da Eleven Studio.
+# Site estático: não tem etapa de build, o Render só publica os arquivos da pasta.
+services:
+  - type: web
+    name: eleven-studio
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      # Página: sempre confere se há versão nova (cada envio aparece na hora).
+      - path: /
+        name: Cache-Control
+        value: no-cache
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache
+      # CSS e JS: 1 dia. Ao alterar, aumente o ?v= no index.html.
+      - path: /*.css
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*.js
+        name: Cache-Control
+        value: public, max-age=86400
+      # Fontes nunca mudam: 1 ano.
+      - path: /assets/fonts/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      # Imagens (favicon, prévia, portfólio): 1 semana.
+      - path: /assets/*.jpg
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /assets/*.png
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /assets/*.svg
+        name: Cache-Control
+        value: public, max-age=604800
+      - path: /assets/portfolio/*
+        name: Cache-Control
+        value: public, max-age=604800
+      # Segurança básica
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN

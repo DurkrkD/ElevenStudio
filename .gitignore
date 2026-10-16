@@ -1,0 +1,17 @@
+# Sistema
+.DS_Store
+Thumbs.db
+*~
+.directory
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Rascunhos e arquivos grandes de trabalho (não vão para o site)
+rascunhos/
+*.psd
+*.ai
+*.fig
+*.zip
