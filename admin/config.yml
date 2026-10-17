@@ -53,14 +53,14 @@ collections:
 
       # ------------------------------------------------------------ PORTFÓLIO
       - name: portfolio
-        label: Portfólio
+        label: Portfólio (clientes reais)
         file: content/portfolio.json
         format: json
         fields:
           - name: trabalhos
             label: Trabalhos
             label_singular: trabalho
-            hint: O link "Portfólio" do menu só aparece quando houver pelo menos 1 trabalho. O primeiro da lista aparece primeiro no site.
+            hint: Só trabalhos de clientes reais. Aparecem na página Referências, na seção "Trabalhos para clientes", que fica escondida enquanto a lista estiver vazia. O primeiro da lista aparece primeiro.
             widget: list
             required: false
             summary: "{{titulo}} · {{categoria}}"

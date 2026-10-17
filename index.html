@@ -31,9 +31,9 @@
   <link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Ao mudar style.css ou script.js, aumente o número em ?v= em TODAS as páginas. -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="script.js?v=3" defer></script>
+  <script src="script.js?v=4" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,6 +69,8 @@
     <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-4.1A8.5 8.5 0 1 1 20.5 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></g></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></g></symbol>
     <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20M10.5 8v5M8 10.5h5"/></g></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
   </svg>
 
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -87,7 +89,7 @@
           <li><a href="index.html" aria-current="page">Início</a></li>
           <li><a href="servicos.html">Serviços</a></li>
           <li><a href="precos.html">Pacotes e preços</a></li>
-          <li data-cms-requires="portfolio" hidden><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="portfolio.html">Referências</a></li>
           <li><a href="sobre.html">Sobre</a></li>
         </ul>
         <a class="btn btn-light btn-sm nav-cta" href="https://wa.me/5531973613994?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Eleven%20Studio%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg> Pedir orçamento</a>
@@ -164,6 +166,26 @@
       </div>
     </section>
 
+
+    <!-- REFERÊNCIAS DE SERVIÇO (projeto conceitual) -->
+    <section class="section section--card" aria-labelledby="refs-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>Referências de serviço</p>
+          <h2 id="refs-title" data-reveal style="--d:80ms">Logo, post e cardápio com a mesma identidade</h2>
+          <p data-reveal style="--d:160ms">Projeto conceitual da Eleven Studio para a Vila Burger, uma hamburgueria fictícia criada para mostrar o padrão de entrega.</p>
+        </div>
+        <div class="ref-thumbs">
+          <a class="ref-thumb" href="portfolio.html#vila-burger" data-reveal style="--d:0ms"><picture><source type="image/webp" srcset="assets/referencias/vila-burger-logo.webp"><img src="assets/referencias/vila-burger-logo.png" alt="Logo da Vila Burger: símbolo de casinha formada por pão, tomate e carne, com o nome VILA BURGER e a assinatura “desde a primeira mordida”." width="1080" height="1080" loading="lazy" decoding="async"></picture><span class="ref-thumb-label">Logo</span></a>
+          <a class="ref-thumb" href="portfolio.html#vila-burger" data-reveal style="--d:80ms"><picture><source type="image/webp" srcset="assets/referencias/vila-burger-inauguracao.webp"><img src="assets/referencias/vila-burger-inauguracao.png" alt="Post de inauguração da Vila Burger: foto de hambúrguer artesanal, título INAUGURAÇÃO, data 15 de novembro às 18h e endereço." width="789" height="990" loading="lazy" decoding="async"></picture><span class="ref-thumb-label">Post</span></a>
+          <a class="ref-thumb" href="portfolio.html#vila-burger" data-reveal style="--d:160ms"><picture><source type="image/webp" srcset="assets/referencias/vila-burger-cardapio.webp"><img src="assets/referencias/vila-burger-cardapio.png" alt="Cardápio digital da Vila Burger com burgers, acompanhamentos e bebidas, preços e QR Code para pedir pelo WhatsApp." width="786" height="993" loading="lazy" decoding="async"></picture><span class="ref-thumb-label">Cardápio</span></a>
+        </div>
+        <div class="ref-thumbs-cta" data-reveal>
+          <a class="btn btn-dark" href="portfolio.html">Ver referências <svg class="i-arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
     <!-- COMO FUNCIONA -->
     <section class="section dark sky sky--dusk" aria-labelledby="processo-title">
       <div class="container">
@@ -234,7 +256,7 @@
             <li><a href="index.html">Início</a></li>
             <li><a href="servicos.html">Serviços</a></li>
             <li><a href="precos.html">Pacotes e preços</a></li>
-            <li data-cms-requires="portfolio" hidden><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="portfolio.html">Referências</a></li>
             <li><a href="sobre.html">Sobre</a></li>
           </ul>
         </div>

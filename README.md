@@ -13,7 +13,8 @@ página inicial, página Sobre (foto, texto e valores) e contato (WhatsApp e Ins
 Cada "Salvar" vira um commit no GitHub e o Render atualiza o site sozinho em 1 ou 2 minutos.
 
 - Depoimentos: a seção só aparece na página inicial quando houver pelo menos 1.
-- Portfólio: o link "Portfólio" do menu só aparece quando houver pelo menos 1 trabalho.
+- Portfólio (clientes reais): aparece na página Referências, na seção "Trabalhos para clientes",
+  só quando houver pelo menos 1 trabalho. O projeto conceitual Vila Burger fica fixo no código.
 - Imagens enviadas pelo painel são convertidas para WebP e reduzidas automaticamente
   (ficam em `assets/uploads/`).
 
@@ -30,12 +31,13 @@ Não compartilhe o token: quem tiver ele consegue alterar o site.
 
 ## Arquivos
 
-- `index.html`, `servicos.html`, `precos.html`, `portfolio.html`, `sobre.html`: páginas
+- `index.html`, `servicos.html`, `precos.html`, `portfolio.html` (Referências), `sobre.html`: páginas
 - `content/*.json`: conteúdo editado pelo painel (o site lê daqui)
 - `admin/`: painel de edição (Sveltia CMS); os formulários estão em `admin/config.yml`
 - `style.css`: visual de todas as páginas
 - `script.js`: menu mobile, header, animações, filtro do portfólio e aplicação do conteúdo
-- `assets/`: fontes, ícones, imagem de prévia (`og-image.jpg`) e `uploads/` (imagens do painel)
+- `assets/`: fontes, ícones, imagem de prévia (`og-image.jpg`), `referencias/` (peças da Vila Burger,
+  em .png e .webp) e `uploads/` (imagens do painel)
 - `render.yaml`: configuração do Render
 
 O texto escrito dentro dos `.html` é uma cópia de segurança. O que vale é o que está

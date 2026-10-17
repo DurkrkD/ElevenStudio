@@ -83,6 +83,42 @@
     reveal(document);
   }
 
+  /* ---------- Lightbox: ampliar imagens (página de referências) ---------- */
+  var lb = document.getElementById('lightbox');
+  if (lb) {
+    var lbImg = lb.querySelector('.lightbox-img');
+    var lbCap = lb.querySelector('.lightbox-caption');
+    var lastTrigger = null;
+    var canDialog = typeof lb.showModal === 'function';
+
+    document.addEventListener('click', function (e) {
+      var trigger = e.target.closest('.ref-zoom');
+      if (!trigger) return;
+      var img = trigger.querySelector('img');
+      var src = img.currentSrc || img.src;
+      if (!canDialog) { window.open(src, '_blank', 'noopener'); return; }
+      lastTrigger = trigger;
+      lbImg.src = src;
+      lbImg.alt = img.alt;
+      lbImg.width = img.naturalWidth || img.width;
+      lbImg.height = img.naturalHeight || img.height;
+      lbCap.textContent = trigger.getAttribute('data-caption') || '';
+      lb.showModal();
+      body.classList.add('lightbox-open');
+      lb.querySelector('.lightbox-close').focus();
+    });
+    lb.querySelector('.lightbox-close').addEventListener('click', function () { lb.close(); });
+    // Clique fora da imagem (no fundo escuro) fecha
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb || e.target === lb.querySelector('.lightbox-figure')) lb.close();
+    });
+    // Esc fecha nativamente; ao fechar, devolve o foco para a imagem clicada
+    lb.addEventListener('close', function () {
+      body.classList.remove('lightbox-open');
+      if (lastTrigger) lastTrigger.focus();
+    });
+  }
+
   /* =========================================================
      Conteúdo do painel
      ========================================================= */
@@ -228,19 +264,14 @@
     setText('precos.observacao', d.observacao);
   }
 
-  /* --- Portfólio --- */
-  function applyPortfolioNav(d) {
-    var has = list(d.trabalhos).some(function (w) { return w.imagem && w.titulo; });
-    document.querySelectorAll('[data-cms-requires="portfolio"]').forEach(function (el) { el.hidden = !has; });
-  }
+  /* --- Portfólio: trabalhos para clientes (painel). A seção só aparece quando houver trabalhos. --- */
   function applyPortfolio(d) {
     var items = list(d.trabalhos).filter(function (w) { return w.imagem && w.titulo; });
-    var empty = document.querySelector('[data-cms-empty="portfolio"]');
+    var section = document.querySelector('[data-cms-section="portfolio"]');
     var filters = document.querySelector('[data-cms-filters]');
-    if (empty) empty.hidden = !!items.length;
+    if (section) section.hidden = !items.length;
     if (!items.length) {
       fill('portfolio', '');
-      if (filters) filters.hidden = true;
       return;
     }
     fill('portfolio', items.map(function (w, i) {
@@ -305,12 +336,9 @@
   }
 
   var tasks = [
-    load('geral').then(safe(applyGeral)),
-    load('portfolio').then(safe(function (d) {
-      applyPortfolioNav(d);
-      if (page === 'portfolio') applyPortfolio(d);
-    }))
+    load('geral').then(safe(applyGeral))
   ];
+  if (page === 'portfolio') tasks.push(load('portfolio').then(safe(applyPortfolio)));
   if (page === 'inicio') {
     tasks.push(load('inicio').then(safe(applyInicio)));
     tasks.push(load('servicos').then(safe(homeServicos)));
