@@ -935,7 +935,80 @@ body.menu-open .site-header {
 }
 .ref-service { font-family: var(--font-head); font-weight: 700; font-size: 1.0625rem; letter-spacing: -0.01em; }
 .ref-piece .link-arrow { font-size: .9375rem; }
-.ref-grid { display: grid; gap: 28px; margin-top: 28px; }
+
+/* Pilha de posts (Instagram) */
+.post-stack-wrap { margin-top: 48px; }
+.stack-hint { text-align: center; font-size: .875rem; color: var(--muted); margin-bottom: 18px; }
+.post-stack {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3.15;
+}
+.stack-card {
+  --r: 0deg;
+  position: absolute;
+  width: 46%;
+  display: block;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--card);
+  color: var(--ink);
+  text-align: left;
+  cursor: zoom-in;
+  box-shadow: 0 2px 6px rgba(10, 22, 40, .08), 0 24px 50px -24px rgba(10, 22, 40, .45);
+  transform: rotate(var(--r));
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.stack-card--left { --r: -7deg; left: 0; top: 9%; z-index: 1; }
+.stack-card--center { --r: 0deg; left: 27%; top: 0; z-index: 3; }
+.stack-card--right { --r: 7deg; left: 54%; top: 11%; z-index: 2; }
+.stack-card:hover,
+.stack-card:focus-visible {
+  z-index: 5;
+  transform: translateY(-10px) rotate(0deg) scale(1.03);
+  box-shadow: 0 4px 10px rgba(10, 22, 40, .1), 0 34px 60px -24px rgba(10, 22, 40, .55);
+}
+.stack-card:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.stack-card img { width: 100%; height: auto; aspect-ratio: 9 / 10; object-fit: cover; transform: none !important; }
+.ig-top, .ig-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  font: 600 .625rem/1 var(--font-body);
+}
+.ig-avatar { width: 16px; height: 16px; flex-shrink: 0; border-radius: 50%; box-shadow: 0 0 0 1px var(--line); }
+.ig-handle { flex: 1; }
+.ig-dots { color: var(--muted); letter-spacing: 1px; }
+.ig-actions svg { width: 14px; height: 14px; }
+.ig-actions .stack-num { margin-left: auto; }
+.stack-num {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font: 700 .625rem/1 var(--font-body);
+}
+.stack-captions { display: grid; gap: 10px; max-width: 780px; margin: 28px auto 0; }
+.stack-captions li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+}
+.stack-captions .ref-service { font-size: 1rem; }
+.stack-captions .link-arrow { margin-left: auto; font-size: .875rem; }
 
 /* Miniaturas na página inicial */
 .ref-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
@@ -1161,8 +1234,17 @@ body.menu-open .wa-float { opacity: 0; pointer-events: none; }
   .svc-grid { grid-template-columns: repeat(2, 1fr); }
   .quotes { grid-template-columns: repeat(2, 1fr); }
   .work-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .ref-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .ref-thumbs { gap: 18px; }
+  .stack-card { width: 42%; border-radius: 18px; }
+  .stack-card--center { left: 29%; }
+  .stack-card--right { left: 58%; }
+  .ig-top, .ig-actions { padding: 10px 12px; gap: 8px; font-size: .8125rem; }
+  .ig-avatar { width: 24px; height: 24px; }
+  .ig-actions svg { width: 20px; height: 20px; }
+  .stack-num { min-width: 26px; height: 22px; font-size: .75rem; }
+  .stack-captions { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .stack-captions li { flex-direction: column; align-items: flex-start; }
+  .stack-captions .link-arrow { margin-left: 0; }
   .ref-thumb-label { left: 10px; bottom: 10px; font-size: .8125rem; padding: 5px 10px; }
   .extras { grid-template-columns: repeat(2, 1fr); }
   .values { grid-template-columns: repeat(3, 1fr); }
