@@ -184,7 +184,7 @@ collections:
 
       # ------------------------------------------------------------ CONTATO
       - name: geral
-        label: Contato (WhatsApp e Instagram)
+        label: Contato e estatísticas
         file: content/geral.json
         format: json
         fields:
@@ -192,3 +192,4 @@ collections:
           - { name: whatsapp_exibicao, label: WhatsApp como aparece no site, widget: string, hint: "Ex.: (31) 97361-3994" }
           - { name: whatsapp_mensagem, label: Mensagem que já vem escrita, widget: text }
           - { name: instagram_usuario, label: "Instagram (sem o @)", widget: string, pattern: ['^[A-Za-z0-9._]+$', 'Sem @ e sem espaços'] }
+          - { name: goatcounter_codigo, label: "Código do GoatCounter (estatísticas)", widget: string, required: false, pattern: ['^[a-z0-9-]*$', 'Só letras minúsculas, números e hífen'], hint: "Ex.: elevenstudio (a parte antes de .goatcounter.com). Deixe vazio para desligar. As visitas e os cliques no WhatsApp aparecem em https://SEU-CODIGO.goatcounter.com" }

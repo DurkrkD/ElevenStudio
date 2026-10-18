@@ -173,7 +173,32 @@
       document.querySelectorAll('a[data-cms="instagram"]').forEach(function (a) { a.href = 'https://instagram.com/' + ig; });
       setText('geral.instagram', '@' + ig);
     }
+    startStats(g.goatcounter_codigo);
   }
+
+  /* --- Estatísticas (GoatCounter: gratuito e sem cookies). Liga quando o código é preenchido no painel. --- */
+  function startStats(code) {
+    code = String(code || '').trim().toLowerCase();
+    if (!/^[a-z0-9-]{2,50}$/.test(code) || location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://gc.zgo.at/count.js';
+    s.setAttribute('data-goatcounter', 'https://' + code + '.goatcounter.com/count');
+    document.body.appendChild(s);
+  }
+  // Conta cliques no WhatsApp e no Instagram (aparecem como eventos no painel do GoatCounter)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a || !window.goatcounter || typeof window.goatcounter.count !== 'function') return;
+    var href = a.getAttribute('href');
+    var type = href.indexOf('https://wa.me/') === 0 ? 'whatsapp' : (href.indexOf('instagram.com') > -1 ? 'instagram' : '');
+    if (!type) return;
+    window.goatcounter.count({
+      path: 'clique-' + type + '-' + (page || 'pagina'),
+      title: 'Clique no ' + (type === 'whatsapp' ? 'WhatsApp' : 'Instagram') + ' (' + (page || 'página') + ')',
+      event: true
+    });
+  });
 
   /* --- Página inicial --- */
   function applyInicio(d) {
