@@ -1216,6 +1216,19 @@ body.menu-open .wa-float { opacity: 0; pointer-events: none; }
                 background-color .25s var(--ease), color .25s var(--ease);
   }
   .js [data-reveal].is-in { opacity: 1; translate: none; }
+
+  /* Abertura (acima da dobra): aparece só com CSS, sem esperar o script.js.
+     Se o script demorar ou falhar (rede fraca), o texto não fica em branco. */
+  .js .hero [data-reveal],
+  .js .page-hero [data-reveal] {
+    opacity: 1;
+    translate: none;
+    animation: hero-in .8s var(--ease) var(--d, 0ms) both;
+  }
+  @keyframes hero-in {
+    from { opacity: 0; translate: 0 20px; }
+    to   { opacity: 1; translate: none; }
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0ms !important; }

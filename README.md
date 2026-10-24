@@ -1,6 +1,6 @@
 # Eleven Studio · site
 
-Site da Eleven Studio (social media e design, Betim/MG, atendimento para todo o Brasil).
+Site da Eleven Studio (social media e design, Betim/MG, atendimento em Betim e região).
 HTML, CSS e JavaScript puro, sem build. No ar em https://eleven-studio-bes1.onrender.com
 
 ## Editar o conteúdo: painel
