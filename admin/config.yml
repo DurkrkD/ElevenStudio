@@ -91,8 +91,7 @@ collections:
             fields:
               - { name: nome, label: Nome do pacote, widget: string }
               - { name: para_quem, label: Para quem é, widget: string }
-              - { name: preco, label: "Parcela por mês (só o número)", widget: string, hint: "Ex.: 74,75. O site mostra \"12x de R$ ... /mês\"." }
-              - { name: total, label: "Total dos 12 meses (só o número)", widget: string, required: false, hint: "Ex.: 897" }
+              - { name: preco, label: "Valor total do plano de 12 meses (só o número)", widget: string, hint: "Ex.: 897. O site mostra \"plano de 12 meses R$ ...\"." }
               - name: itens
                 label: O que está incluso
                 widget: list

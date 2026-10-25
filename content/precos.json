@@ -3,8 +3,7 @@
     {
       "nome": "Essencial",
       "para_quem": "Para começar a aparecer com constância.",
-      "preco": "59,75",
-      "total": "717",
+      "preco": "717",
       "itens": [
         "3 posts por mês (feed ou stories)",
         "1 rede social",
@@ -16,8 +15,7 @@
     {
       "nome": "Profissional",
       "para_quem": "Para quem quer crescer e vender pelas redes.",
-      "preco": "74,75",
-      "total": "897",
+      "preco": "897",
       "itens": [
         "4 posts por mês",
         "1 rede social",
@@ -30,8 +28,7 @@
     {
       "nome": "Completo",
       "para_quem": "Para ter as redes resolvidas todo mês.",
-      "preco": "99,75",
-      "total": "1.197",
+      "preco": "1.197",
       "itens": [
         "4 posts + 1 Reels editado por mês",
         "2 redes sociais",
@@ -68,5 +65,5 @@
       "preco": "249"
     }
   ],
-  "observacao": "Planos de 12 meses, pagos em 12 parcelas mensais. Valores podem variar conforme o projeto: chame no WhatsApp para um orçamento."
+  "observacao": "Planos de 12 meses: o valor mostrado é o total do plano. Valores podem variar conforme o projeto: chame no WhatsApp para um orçamento."
 }
