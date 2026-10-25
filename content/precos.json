@@ -3,11 +3,11 @@
     {
       "nome": "Essencial",
       "para_quem": "Para começar a aparecer com constância.",
-      "preco": "497",
+      "preco": "717",
       "itens": [
-        "8 posts (feed ou stories)",
+        "3 posts por mês (feed ou stories)",
         "1 rede social",
-        "Calendário básico de conteúdo"
+        "Legendas prontas para postar"
       ],
       "destaque": false,
       "selo": ""
@@ -17,24 +17,23 @@
       "para_quem": "Para quem quer crescer e vender pelas redes.",
       "preco": "897",
       "itens": [
-        "12 posts + 4 Reels",
-        "2 redes sociais",
-        "1 cardápio digital incluso",
-        "Calendário + relatório mensal"
+        "4 posts por mês",
+        "1 rede social",
+        "Roteiro de 1 Reels por mês (você grava, a gente orienta)",
+        "Legendas + calendário do mês"
       ],
       "destaque": true,
       "selo": "Recomendado"
     },
     {
       "nome": "Completo",
-      "para_quem": "Para ter as redes inteiras resolvidas.",
-      "preco": "1.497",
+      "para_quem": "Para ter as redes resolvidas todo mês.",
+      "preco": "1.197",
       "itens": [
-        "20 posts + 8 Reels",
-        "2 redes sociais + WhatsApp Business",
-        "Logo inclusa",
-        "1 cardápio digital + atualização mensal",
-        "Calendário + relatório + reunião mensal"
+        "4 posts + 1 Reels editado por mês",
+        "2 redes sociais",
+        "Roteiro e legendas prontos",
+        "Calendário + relatório mensal"
       ],
       "destaque": false,
       "selo": ""
@@ -45,7 +44,7 @@
       "icone": "logo",
       "nome": "Logo simples",
       "descricao": "Símbolo e tipografia, com arquivos para impressão e redes.",
-      "preco": "297"
+      "preco": "279"
     },
     {
       "icone": "menu",
@@ -57,7 +56,7 @@
       "icone": "reel",
       "nome": "Pack de 4 Reels",
       "descricao": "Edição com cortes, legendas na tela e transições.",
-      "preco": "497"
+      "preco": "397"
     },
     {
       "icone": "post",
@@ -66,5 +65,5 @@
       "preco": "297"
     }
   ],
-  "observacao": "Valores podem variar conforme o projeto. Entre em contato para um orçamento personalizado."
+  "observacao": "Planos de 12 meses: o valor mostrado é o total do plano. Valores podem variar conforme o projeto: chame no WhatsApp para um orçamento."
 }

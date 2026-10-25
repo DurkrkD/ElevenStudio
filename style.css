@@ -733,6 +733,7 @@ body.menu-open .site-header {
 }
 .plan-price strong sup { font-size: .45em; vertical-align: .9em; margin-right: 4px; letter-spacing: 0; }
 .plan-price span { color: var(--muted); font-weight: 500; }
+.plan-total { display: block; margin-top: 6px; font-style: normal; font-size: .8125rem; color: var(--muted); }
 .plan-list { display: grid; gap: 12px; margin-bottom: 30px; }
 .plan .btn { margin-top: auto; }
 
@@ -745,7 +746,8 @@ body.menu-open .site-header {
 }
 .plan--featured .plan-for,
 .plan--featured .plan-price small,
-.plan--featured .plan-price span { color: var(--on-dark-2); }
+.plan--featured .plan-price span,
+.plan--featured .plan-total { color: var(--on-dark-2); }
 .plan--featured .plan-price { border-color: var(--on-dark-line); }
 .plan--featured .plan-list svg { color: var(--sun); }
 @media (hover: hover) {
