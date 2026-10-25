@@ -84,14 +84,15 @@ collections:
         format: json
         fields:
           - name: pacotes
-            label: Pacotes mensais
+            label: Planos de 12 meses
             label_singular: pacote
             widget: list
             summary: "{{nome}} · R$ {{preco}}"
             fields:
               - { name: nome, label: Nome do pacote, widget: string }
               - { name: para_quem, label: Para quem é, widget: string }
-              - { name: preco, label: "Preço por mês (só o número)", widget: string, hint: "Ex.: 497 ou 1.497. O site mostra \"a partir de R$ ... /mês\"." }
+              - { name: preco, label: "Parcela por mês (só o número)", widget: string, hint: "Ex.: 74,75. O site mostra \"12x de R$ ... /mês\"." }
+              - { name: total, label: "Total dos 12 meses (só o número)", widget: string, required: false, hint: "Ex.: 897" }
               - name: itens
                 label: O que está incluso
                 widget: list

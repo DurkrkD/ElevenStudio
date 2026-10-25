@@ -269,7 +269,8 @@
         return '<article class="card plan' + (feat ? ' plan--featured dark' : '') + '" data-reveal' + delay(i * 80) + '>' +
           (feat && p.selo ? '<span class="plan-badge">' + esc(p.selo) + '</span>' : '') +
           '<h2>' + esc(p.nome) + '</h2><p class="plan-for">' + esc(p.para_quem) + '</p>' +
-          '<p class="plan-price"><small>a partir de</small><strong><sup>R$</sup>' + esc(p.preco) + '</strong><span>/mês</span></p>' +
+          '<p class="plan-price"><small>12x de</small><strong><sup>R$</sup>' + esc(p.preco) + '</strong><span>/mês</span>' +
+            (p.total ? '<em class="plan-total">plano de 12 meses · total R$ ' + esc(p.total) + '</em>' : '') + '</p>' +
           '<ul class="plan-list">' + list(p.itens).map(function (x) { return '<li>' + icon('check', 18) + esc(x) + '</li>'; }).join('') + '</ul>' +
           '<a class="btn ' + (feat ? 'btn-light' : 'btn-outline') + ' btn-block" href="' + esc(WA) + '" target="_blank" rel="noopener">Quero o ' + esc(p.nome) + '</a>' +
           '</article>';
