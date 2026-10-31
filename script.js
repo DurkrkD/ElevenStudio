@@ -182,7 +182,9 @@
     if (!/^[a-z0-9-]{2,50}$/.test(code) || location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
     var s = document.createElement('script');
     s.async = true;
-    s.src = 'https://gc.zgo.at/count.js';
+    s.src = 'https://gc.zgo.at/count.v4.js';
+    s.integrity = 'sha384-nRw6qfbWyJha9LhsOtSb2YJDyZdKvvCFh0fJYlkquSFjUxp9FVNugbfy8q1jdxI+';
+    s.crossOrigin = 'anonymous';
     s.setAttribute('data-goatcounter', 'https://' + code + '.goatcounter.com/count');
     document.body.appendChild(s);
   }
